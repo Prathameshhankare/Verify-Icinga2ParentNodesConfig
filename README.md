@@ -22,3 +22,47 @@ This PowerShell script automates the process of checking Domain Controller machi
    ```powershell
    Install-WindowsFeature -Name RSAT-AD-PowerShell
    ```
+3. Update the log and CSV file paths in the script to your desired locations:
+  ```powershell
+  $logFilePath = "D:\INIT\PRATHAMESH\Powershell Scripts\Icinga2 Parent Node verification\icinga2_endpoint_check.log"
+  $outputCsv = "D:\INIT\PRATHAMESH\Powershell Scripts\Icinga2 Parent Node verification\icinga2_endpoints.csv"
+  ```
+## Usage
+1. Open PowerShell with administrative privileges.
+2. Run the script:
+   ```powershell
+   .\Verify-Icinga2SUPSATParentNodes.ps1
+   ```
+3. The script will:
+   - Log the status of each machine in the specified log file.
+   - Export endpoint details to the specified CSV file.
+  
+## Output
+- **Log file**: Contains a step-by-step log of the script's execution, including machine statuses, file checks, and any errors encountered.
+- **CSV file**: Contains a list of endpoints with details on whether they are configured with an FQDN or IP, along with the machine name.
+
+## Example Log Output
+```log
+2024-09-13 12:00:00 - Processing Server1
+2024-09-13 12:00:01 - Server1 is up.
+2024-09-13 12:00:02 - zones.conf found on Server1.
+2024-09-13 12:00:03 - Found SUPSAT Endpoint: SUPSAT01 with FQDN icinga.example.com
+2024-09-13 12:00:04 - Finished processing Server1
+2024-09-13 12:00:05 - Processing Server2
+2024-09-13 12:00:06 - Server2 is up.
+2024-09-13 12:00:07 - zones.conf found on Server2.
+2024-09-13 12:00:08 - Found SUPSAT Endpoint: SUPSAT02 with IP 192.168.1.100
+2024-09-13 12:00:09 - Finished processing Server2
+2024-09-13 12:00:10 - Script execution completed.
+```
+
+## Example CSV Output
+```text
+MachineName,EndpointName,ConfiguredWith,FQDNorIP
+Server1,SUPSAT01,FQDN,icinga.example.com
+Server2,SUPSAT02,IP,192.168.1.100
+```
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
