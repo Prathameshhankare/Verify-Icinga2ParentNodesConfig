@@ -24,8 +24,8 @@ This PowerShell script automates the process of checking Domain Controller machi
    ```
 3. Update the log and CSV file paths in the script to your desired locations:
   ```powershell
-  $logFilePath = "D:\INIT\PRATHAMESH\Powershell Scripts\Icinga2 Parent Node verification\icinga2_endpoint_check.log"
-  $outputCsv = "D:\INIT\PRATHAMESH\Powershell Scripts\Icinga2 Parent Node verification\icinga2_endpoints.csv"
+  $logFilePath = "\PATH\TO\YOUR\LOG_File.log"
+  $outputCsv = "\PATH\TO\YOUR\CSV_File.csv"
   ```
 ## Usage
 1. Open PowerShell with administrative privileges.
@@ -46,12 +46,12 @@ This PowerShell script automates the process of checking Domain Controller machi
 2024-09-13 12:00:00 - Processing Server1
 2024-09-13 12:00:01 - Server1 is up.
 2024-09-13 12:00:02 - zones.conf found on Server1.
-2024-09-13 12:00:03 - Found SUPSAT Endpoint: SUPSAT01 with FQDN icinga.example.com
+2024-09-13 12:00:03 - Found Endpoint: XXSUPSATXX with FQDN icinga.example.com
 2024-09-13 12:00:04 - Finished processing Server1
 2024-09-13 12:00:05 - Processing Server2
 2024-09-13 12:00:06 - Server2 is up.
 2024-09-13 12:00:07 - zones.conf found on Server2.
-2024-09-13 12:00:08 - Found SUPSAT Endpoint: SUPSAT02 with IP 192.168.1.100
+2024-09-13 12:00:08 - Found Endpoint: XXSUPSATXX with IP 192.168.1.100
 2024-09-13 12:00:09 - Finished processing Server2
 2024-09-13 12:00:10 - Script execution completed.
 ```
@@ -59,8 +59,8 @@ This PowerShell script automates the process of checking Domain Controller machi
 ## Example CSV Output
 ```text
 MachineName,EndpointName,ConfiguredWith,FQDNorIP
-Server1,SUPSAT01,FQDN,icinga.example.com
-Server2,SUPSAT02,IP,192.168.1.100
+Server1,XXSUPSATXX,FQDN,icinga.example.com
+Server2,XXSUPSATXX,IP,192.168.1.100
 ```
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
